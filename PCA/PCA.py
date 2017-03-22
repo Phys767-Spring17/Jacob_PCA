@@ -13,7 +13,7 @@ def read_data(file, dropnans=True):
 	Note:Is not yet smart enough to read in messy data, assumes it is such that read_table can handle it.
 
 	'''	
-	data=pd.read_table(file)
+	data=pd.read_table(file, sep='\s+', header=2, index_col=0, skip_footer=9, na_values=('----', '-----'),engine='python')
 	if dropnans==True:
 		data=data.dropna()
 	return data
