@@ -1,4 +1,4 @@
-from pca import *
+from PCA.pca import *
 
 def test_read_data1():
 	file='data/4point3redone.dat'
