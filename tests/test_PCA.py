@@ -2,12 +2,12 @@ from pca.pca import *
 
 def test_read_data1():
 	file='data/4point3redone.dat'
-	tb=pca.read_data(file)
+	tb=read_data(file)
 	assert tb.shape==(22,13)
 
 def test_normalize_data():
 	file='data/4point3redone.dat'
-	tb=pca.read_data(file)
+	tb=read_data(file)
 	normed=pca.normalize_data(tb)
 	for c in normed.columns:
 		assert c.mean()==0
