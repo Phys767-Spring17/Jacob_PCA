@@ -62,4 +62,4 @@ def test_transform_data():
 	pairs=eigenpairs(normed)
 	selected_pairs=select_pairs(pairs, keep=2)
 	trans_data=transform_data(normed, selected_pairs)
-	assert trans_data.shape==(13,2)
+	assert trans_data.shape==(18,2)
