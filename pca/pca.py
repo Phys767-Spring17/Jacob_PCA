@@ -40,8 +40,9 @@ def eigenpairs(data):
 	'''
 	covariance_matrix=data.cov()
 	eigenvalues, eigenvectors=np.linalg.eig(covariance_matrix)
+	eigenvalues=np.abs(eigenvalues)
 	eigenvalues=eigenvalues/np.sum(eigenvalues)
-	pairs=[(np.abs(eigenvalues[i]), eigenvectors[:,i]) for i in range(len(eigenvalues))]
+	pairs=[(eigenvalues[i], eigenvectors[:,i]) for i in range(len(eigenvalues))]
 	pairs=sorted(pairs, key=itemgetter(0))
 	return pairs
 
